@@ -15,6 +15,4 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
   this.reset();
 });
 
-hiii there im bhavani
 
-hiii its new code 
