@@ -1,14 +1,24 @@
-// Form Submission Handling
-document.getElementById('contact-form').addEventListener('submit', function (e) {
-  e.preventDefault();
-  const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
-  const message = document.getElementById('message').value;
 
-  if (name && email && message) {
-    alert('Thank you for contacting us! We will get back to you soon.');
-    document.getElementById('contact-form').reset();
-  } else {
-    alert('Please fill out all fields.');
-  }
-});
+let cart = [];
+
+function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCart();
+}
+
+function updateCart() {
+    let cartList = document.getElementById("cart-items");
+    let cartTotal = document.getElementById("cart-total");
+
+    cartList.innerHTML = "";
+    let total = 0;
+
+    cart.forEach(item => {
+        let li = document.createElement("li");
+        li.textContent = `${item.name} - ₹${item.price}`;
+        cartList.appendChild(li);
+        total += item.price;
+    });
+
+    cartTotal.textContent = total;
+}
