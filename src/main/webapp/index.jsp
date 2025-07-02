@@ -1,89 +1,146 @@
-<!DOCTYPE html> <!-- Bug: Missing DOCTYPE declaration type -->
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width"> <!-- Bug: Missing initial-scale=1.0 -->
-    <title>ShopEasy - Your One-Stop Online Store</title>
-    <link rel="stylesheet" href="style.css"> <!-- Bug: Incorrect file name (should be styles.css) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/font-awesome.min.css"> <!-- Bug: Wrong file name for Font Awesome -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bhavani Interiors</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #ffffff;
+      padding: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      color: #d63384;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      margin-right: 20px;
+      text-decoration: none;
+      color: #555;
+    }
+
+    nav a:hover {
+      color: #d63384;
+    }
+
+    .hero {
+      background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
+      background-size: cover;
+      background-position: center;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+    }
+
+    .hero h2 {
+      font-size: 36px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+    }
+
+    section {
+      padding: 40px 20px;
+      background-color: white;
+      margin: 20px auto;
+      max-width: 1000px;
+      border-radius: 8px;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .service-box {
+      flex: 1 1 30%;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="logo">
-            <h1>ShopEasy<h1> <!-- Bug: Missing closing slash on <h1> -->
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#mobiles">Mobiles</a>
-                <li><a href="#laptops">Laptops</a></li>
-                <li><a href="#clothes">Clothes</a></li>
-                <li><a href="#cart"><em class="fas fa-shopping-cart"></em> Cart <span id="cart-count">0</span></a></li>
-            </ul>
-        </nav>
-    </header>
 
-    <main>
-        <section id="mobiles" class="product-section">
-            <h2>Smartphones</h2>
-            <div class="product-grid" id="mobile-product"> <!-- Bug: ID should be 'mobile-products' -->
-                <!-- Mobile products will be inserted here by JavaScript -->
-            </div>
-        </section>
+  <!-- Header -->
+  <header>
+    <h1>Bhavani Interiors</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-        <section id="laptops" class="product-section">
-            <h2>Laptops</h2>
-            <div class="product-grid" id="laptop-products">
-                <!-- Laptop products will be inserted here by JavaScript -->
-            </div>
-        </section>
+  <!-- Hero Section -->
+  <div class="hero">
+    <h2>Designs that make you feel home</h2>
+  </div>
 
-        <section id="clothes" class="product-section">
-            <h2>Clothing</h2>
-            <div class="product-gridd" id="clothing-products"> <!-- Bug: class name typo 'product-gridd' -->
-                <!-- Clothing products will be inserted here by JavaScript -->
-            </div>
-        </section>
-    </main>
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We are passionate about turning empty spaces into stylish and functional homes. With over 15 years of experience, Bhavani Interiors brings elegance and creativity into your life.</p>
+  </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>About ShopEasy</h3>
-                <p>Your one-stop destination for all your shopping needs. Quality products at affordable prices.</p>
-            </div>
-            <div class="footer-section">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#mobile">Mobiles</a></li> <!-- Bug: Incorrect anchor ID (should be #mobiles) -->
-                    <li><a href="#laptps">Laptops</a></li> <!-- Bug: Typo in href (#laptps instead of #laptops) -->
-                    <li><a href="#clothes">Clothes</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <p>Email: <a href="mailto:supportshopeasy.com">support@shopeasy.com</a></p> <!-- Bug: Missing ':' in mailto -->
-                <p>Phone: <a href="tel:9876543210">+91 9876543210</a></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2023 ShopEasy. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <div id="cart-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">X</span> <!-- Bug: Using "X" instead of proper '&times;' -->
-            <h2>Your Shopping Cart</h2>
-            <div id="cart-items">
-                <!-- Cart items will be inserted here -->
-            </div>
-            <div id="cart-total">
-                <p>Total: ₹<span id="total-amt">0</span></p> <!-- Bug: ID mismatch (should be total-amount) -->
-                <button id="checkout-button">Proceed to Checkout</button> <!-- Bug: ID mismatch (should be checkout-btn) -->
-            </div>
-        </div>
+  <!-- Services -->
+  <section id="services">
+    <h2>Our Services</h2>
+    <div class="services">
+      <div class="service-box">
+        <h3>Modular Kitchens</h3>
+        <p>Space-saving, functional, and beautiful modular kitchen designs.</p>
+      </div>
+      <div class="service-box">
+        <h3>Living Room Styling</h3>
+        <p>Bright, warm, and welcoming living spaces designed just for you.</p>
+      </div>
+      <div class="service-box">
+        <h3>Bedroom Makeovers</h3>
+        <p>Luxury and comfort combined to create your perfect bedroom.</p>
+      </div>
     </div>
+  </section>
 
-    <script src="scripts.js"></script> <!-- Bug: Wrong script file name (should be script.js) -->
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>📧 Email: <a href="mailto:soundarya_siri@yahoo.com">soundarya_siri@yahoo.com</a></p>
+    <p>📞 Phone: +91 9959025336</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 Bhavani Interiors. All rights reserved.
+  </footer>
+
 </body>
 </html>
